@@ -103,6 +103,7 @@
 
             this.physics.add.collider(player, platforms);
             this.physics.add.collider(stars, platforms);
+            
             this.physics.add.overlap(player, stars, collectStar, null, this);
         }
 
@@ -127,6 +128,10 @@
             if (cursors.up.isDown && player.body.touching.down) {
                 player.setVelocityY(-320);
             }
+        }
+
+        function collectStar(player, star){
+            star.disableBody(true, true);
         }
     </script>
 
