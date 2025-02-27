@@ -116,6 +116,7 @@
             this.physics.add.overlap(player, stars, collectStar, null, this);
 
             scoreText = this.add.text(16, 16, 'Score: 0', {fontSize: '32px', fill: '#000' });
+            gameOverText = this.add.text(220 ,260, '', {fontSize: '64px', fill: '#000'});
         }
 
         function update ()
@@ -168,6 +169,7 @@
 
             player.anims.play('turn');
 
+            gameOverText.setText('Game Over')
             gameOver = true;
         }
     </script>
