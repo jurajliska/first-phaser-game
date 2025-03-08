@@ -5,6 +5,7 @@
     <title>firstgame</title>
     <script src="https://cdn.jsdelivr.net/npm/phaser@v3.88.0/dist/phaser.js"></script>
     <!-- <script src="phaser.js"></script> -->
+     <link rel="icon" href="assets/favicon.ico">
 
     <style>
         body{
@@ -116,7 +117,8 @@
             this.physics.add.overlap(player, stars, collectStar, null, this);
 
             scoreText = this.add.text(16, 16, 'Score: 0', {fontSize: '32px', fill: '#000' });
-            gameOverText = this.add.text(220 ,260, '', {fontSize: '64px', fill: '#000'});
+            gameOverText = this.add.text(220 ,260, 'Game over', {fontSize: '64px', fill: '#000'});
+            gameOverText.setVisible(false);
         }
 
         function update ()
@@ -169,7 +171,7 @@
 
             player.anims.play('turn');
 
-            gameOverText.setText('Game Over')
+            gameOverText.setVisible(true);
             gameOver = true;
         }
     </script>
